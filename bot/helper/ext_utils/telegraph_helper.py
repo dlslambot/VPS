@@ -77,5 +77,4 @@ class TelegraphHelper:
             )
         return
 
-
-telegraph=TelegraphHelper(f'{AUTHOR_NAME}', f'{AUTHOR_URL}')
+telegraph=TelegraphHelper('DarkLordlk', 'https://t.me/Dark_LordSL')
