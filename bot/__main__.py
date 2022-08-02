@@ -87,10 +87,6 @@ def getHerokuDetails(h_api_key, h_app_name):
         LOGGER.error(g)
         return None
 
-
-
-IMAGE_X = "https://drive.google.com/file/d/1vBs7Nj8sFS8WeOyqUgKwWTBH0jj_639I/view?usp=sharing"
-
 def stats(update, context):
     if ospath.exists('.git'):
         last_commit = check_output(["git log -1 --date=short --pretty=format:'%cd <b>From</b> %cr'"], shell=True).decode()
@@ -137,7 +133,7 @@ def stats(update, context):
     if heroku: stats += heroku 
            
     
-    update.effective_message.reply_photo(IMAGE_X, stats, parse_mode=ParseMode.HTML)
+    update.effective_message.reply_photo(IMAGE_STATS, stats, parse_mode=ParseMode.HTML)
 
 
 def start(update, context):
