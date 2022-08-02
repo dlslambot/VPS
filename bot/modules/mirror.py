@@ -13,7 +13,7 @@ from telegram import InlineKeyboardMarkup, InlineKeyboardButton, ParseMode
 from bot import bot, Interval, INDEX_URL, BUTTON_FOUR_NAME, BUTTON_FOUR_URL, BUTTON_FIVE_NAME, BUTTON_FIVE_URL, \
                 BUTTON_SIX_NAME, BUTTON_SIX_URL, VIEW_LINK, aria2, QB_SEED, dispatcher, DOWNLOAD_DIR, \
                 download_dict, download_dict_lock, TG_SPLIT_SIZE, LOGGER, DB_URI, INCOMPLETE_TASK_NOTIFIER, \
-                MEGAREST, LEECH_LOG, SOURCE_LINK, BOT_PM, MIRROR_LOGS, AUTO_DELETE_UPLOAD_MESSAGE_DURATION
+                MEGAREST, LEECH_LOG, SOURCE_LINK, BOT_PM, MIRROR_LOGS
 from bot.helper.ext_utils.bot_utils import is_url, is_magnet, is_gdtot_link, is_mega_link, is_gdrive_link, get_content_type
 from bot.helper.ext_utils.fs_utils import get_base_name, get_path_size, split_file, clean_download
 from bot.helper.ext_utils.shortenurl import short_url
@@ -209,7 +209,7 @@ class MirrorListener:
         mesg = self.message.text.split('\n')
         message_args = mesg[0].split(' ', maxsplit=1)
         reply_to = self.message.reply_to_message
-        if self.message.chat.type != 'private' and AUTO_DELETE_UPLOAD_MESSAGE_DURATION != -1:
+        if self.message.chat.type != 'private' != -1:
             if reply_to is not None:
                 try:
                     reply_to.delete()
